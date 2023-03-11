@@ -26,14 +26,24 @@
                 android:textColor="#3D405B"
                 android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/price"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$5.49"
-                android:textColor="#F28482"
-                android:textSize="16sp" />
-
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/dolla"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:textColor="#F28482"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5.49"
+                    android:textColor="#F28482"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
         </LinearLayout>
     
@@ -46,6 +56,7 @@
         android:weightSum="3">
 
         <ImageView
+            android:id="@+id/minus"
             android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:src="@drawable/minus"
@@ -64,6 +75,7 @@
             android:textColor="#3D405B" />
 
         <ImageView
+            android:id="@+id/plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

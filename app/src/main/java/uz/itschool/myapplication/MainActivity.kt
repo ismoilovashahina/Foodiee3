@@ -9,22 +9,25 @@ import uz.itschool.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
+    private lateinit var adapter: Adapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        setUpAdapter()
 
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val adapter = Adapter(Foodlist.getModel() as ArrayList<Foods>)
+    }
+
+
+
+    private fun setUpAdapter() {
+
+        adapter = Adapter(this,Foodlist.getModel() as ArrayList<Foods>)
 
         binding.recyclerView.adapter = adapter
-
-
-
-
-
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
     }
 }
